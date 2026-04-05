@@ -1,0 +1,21 @@
+[package]
+edition = "2024"
+name = "tiburon-rs"
+rust-version = "1.88"
+version = "0.1.0"
+
+
+[dependencies]
+static_cell = { version = "2.1.1" }
+embedded-can = "0.*"
+bytemuck = { version = "1.25.0", features = ["derive"] }
+
+[dev-dependencies]
+can = { version = "0.3.0", git = "https://github.com/H01001000/rust-can", rev = "5ffb806e727510b6462db3605df35bf55cc2b5d1", features = [
+  "embedded-can-compat",
+] }
+criterion = { version = "0.8", features = ["html_reports"] }
+
+[[bench]]
+name = "bench_main"
+harness = false
